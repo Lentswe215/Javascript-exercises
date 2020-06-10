@@ -1,11 +1,19 @@
+function longestString(stringArray) {
+	let longestStringArray = [],
+		currentLongestString = '';
 
-function longest(myStringArray) {
-    var longestString = "";
-  for(var i =0; i<myStringArray; i++){
-    if(myStringArray.length > longestString){
-        longestString = myStringArray[i];
-    }
-    console.log("The longest string are/is : "+longestString);
-    }
-    }
-    longest(["once", "upon", "a", "time"]);
+	for (let i = 0; i < stringArray.length; i++) {
+		if (stringArray[i].length >= currentLongestString.length) {
+			currentLongestString = stringArray[i];
+		}
+	}
+
+	for (let j = 0; j < stringArray.length; j++) {
+		if (stringArray[j].length == currentLongestString.length) {
+			longestStringArray.push(stringArray[j]);
+		}
+	}
+
+	console.log('Longest string is/are:', longestStringArray);
+}
+longest(['once', 'upon', 'a', 'time']);
